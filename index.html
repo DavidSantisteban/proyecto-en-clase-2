@@ -1,0 +1,633 @@
+<!doctype html>
+<html lang="es-CO">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Universidad Libre</title>
+  <meta name="description" content="Universidad Libre de Colombia: siete seccionales, seis facultades y más de cien años de pensamiento libre.">
+  <meta name="theme-color" content="#b3141b">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Libre+Franklin:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+
+<!-- ================= BARRA DE AVISO (como el aviso superior de Harvard) ================= -->
+<div class="alert-bar" role="region" aria-label="Aviso institucional">
+  <div class="wrap alert-bar__inner">
+    <p><strong>Alerta de seguridad:</strong> hay intentos de suplantar a la Universidad en procesos de compra.</p>
+    <a href="https://www.unilibre.edu.co/noticias/alerta-de-seguridad-suplantacion-de-identidad-institucional-en-procesos-de-compra/">Leer el aviso</a>
+  </div>
+</div>
+
+<!-- ================= ENCABEZADO ================= -->
+<header class="header" id="top">
+  <div class="wrap header__inner">
+    <a class="wordmark" href="https://www.unilibre.edu.co" aria-label="Universidad Libre, inicio">
+      <!-- Reemplazar por el escudo oficial en SVG -->
+      <span class="wordmark__seal" aria-hidden="true"></span>
+      <span class="wordmark__name">Universidad Libre</span>
+    </a>
+
+    <div class="header__actions">
+      <a class="header__link hide-md" href="https://www.unilibre.edu.co/aspirantes">Inscríbete</a>
+      <button class="header__btn" type="button" id="a11y-toggle" aria-expanded="false" aria-controls="a11y-panel">
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="4.5" r="2" fill="currentColor"/><path d="M4 8.5l8 1.5 8-1.5M12 10v5m0 0l-3.5 6.5M12 15l3.5 6.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <span class="hide-sm">Accesibilidad</span>
+      </button>
+      <button class="header__btn" type="button" id="search-open" aria-haspopup="dialog">
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <span class="hide-sm">Buscar</span>
+      </button>
+      <button class="header__btn header__btn--menu" type="button" id="menu-open" aria-haspopup="dialog">
+        <span>Menú</span>
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><path d="M3 7h18M3 12h18M3 17h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Panel de accesibilidad -->
+  <div class="a11y-panel" id="a11y-panel" hidden>
+    <div class="wrap a11y-panel__inner">
+      <fieldset class="a11y-group">
+        <legend>Tamaño del texto</legend>
+        <div class="segmented">
+          <button type="button" data-font="0" aria-pressed="true">Normal</button>
+          <button type="button" data-font="1" aria-pressed="false">Grande</button>
+          <button type="button" data-font="2" aria-pressed="false">Muy grande</button>
+        </div>
+      </fieldset>
+      <div class="a11y-group">
+        <label class="switch"><input type="checkbox" id="opt-contrast"> Alto contraste</label>
+        <label class="switch"><input type="checkbox" id="opt-motion"> Reducir animaciones</label>
+        <label class="switch"><input type="checkbox" id="opt-links"> Subrayar enlaces</label>
+      </div>
+      <button type="button" class="text-btn" id="a11y-reset">Restablecer</button>
+    </div>
+  </div>
+</header>
+
+<!-- ================= MENÚ A PANTALLA COMPLETA (patrón Harvard) ================= -->
+<dialog class="menu" id="menu" aria-label="Menú principal">
+  <div class="menu__bar wrap">
+    <span class="wordmark wordmark--inverse" aria-hidden="true">
+      <span class="wordmark__seal"></span>
+      <span class="wordmark__name">Universidad Libre</span>
+    </span>
+    <button class="header__btn header__btn--inverse" type="button" id="menu-close">
+      <span>Cerrar</span>
+      <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><path d="M5 5l14 14M19 5L5 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+
+  <div class="menu__body wrap">
+    <nav aria-label="Secciones">
+      <ol class="menu__sections" id="menu-sections">
+        <li><button type="button" class="menu__item" aria-expanded="true" aria-controls="m-estudia"><span class="menu__num">1</span>Estudia</button></li>
+        <li><button type="button" class="menu__item" aria-expanded="false" aria-controls="m-facultades"><span class="menu__num">2</span>Facultades</button></li>
+        <li><button type="button" class="menu__item" aria-expanded="false" aria-controls="m-vida"><span class="menu__num">3</span>Vida universitaria</button></li>
+        <li><button type="button" class="menu__item" aria-expanded="false" aria-controls="m-investigacion"><span class="menu__num">4</span>Investigación</button></li>
+        <li><button type="button" class="menu__item" aria-expanded="false" aria-controls="m-universidad"><span class="menu__num">5</span>La Universidad</button></li>
+        <li><button type="button" class="menu__item" aria-expanded="false" aria-controls="m-noticias"><span class="menu__num">6</span>Noticias</button></li>
+      </ol>
+    </nav>
+
+    <div class="menu__panels">
+      <section class="menu__panel" id="m-estudia">
+        <button type="button" class="menu__back text-btn">Volver</button>
+        <h2>Estudia</h2>
+        <p>Programas presenciales y virtuales en siete ciudades. Inscripciones abiertas para 2027-1; en pregrado la inscripción no tiene costo.</p>
+        <a class="menu__more" href="https://www.unilibre.edu.co/aspirantes">Conoce la oferta académica</a>
+        <ul class="menu__links">
+          <li><a href="https://www.unilibre.edu.co/pregrados">Pregrados</a></li>
+          <li><a href="https://www.unilibre.edu.co/posgrados">Especializaciones, maestrías y doctorados</a></li>
+          <li><a href="https://www.unilibre.edu.co/programas-virtuales/">Programas virtuales</a></li>
+          <li><a href="https://www.unilibre.edu.co/educacion-continua">Educación continua</a></li>
+          <li><a href="https://www.unilibre.edu.co/admisiones-y-registro/">Admisiones y registro</a></li>
+          <li><a href="https://www.unilibre.edu.co/financiacion">Financiación</a></li>
+          <li><a href="https://www.unilibre.edu.co/cleul/">Centro de Lenguas Extranjeras</a></li>
+          <li><a href="https://www.unilibre.edu.co/colegio/">Colegio Universidad Libre</a></li>
+        </ul>
+      </section>
+
+      <section class="menu__panel" id="m-facultades" hidden>
+        <button type="button" class="menu__back text-btn">Volver</button>
+        <h2>Facultades</h2>
+        <p>Seis facultades presentes en distintas seccionales del país.</p>
+        <a class="menu__more" href="https://www.unilibre.edu.co/facultades">Ver todas las facultades</a>
+        <ul class="menu__links">
+          <li><a href="https://www.unilibre.edu.co/facultades">Derecho, Ciencias Políticas y Sociales</a></li>
+          <li><a href="https://www.unilibre.edu.co/facultades">Ciencias Económicas, Administrativas y Contables</a></li>
+          <li><a href="https://www.unilibre.edu.co/facultades">Ingeniería</a></li>
+          <li><a href="https://www.unilibre.edu.co/facultades">Ciencias de la Salud</a></li>
+          <li><a href="https://www.unilibre.edu.co/facultades">Ciencias de la Educación</a></li>
+          <li><a href="https://www.unilibre.edu.co/bogota/facultad-de-filosofia-y-ciencias-humanas/">Filosofía y Ciencias Humanas</a></li>
+        </ul>
+      </section>
+
+      <section class="menu__panel" id="m-vida" hidden>
+        <button type="button" class="menu__back text-btn">Volver</button>
+        <h2>Vida universitaria</h2>
+        <p>Bienestar, biblioteca, cultura e intercambios para acompañarte durante toda la carrera.</p>
+        <a class="menu__more" href="https://www.unilibre.edu.co/bienestar-universitario/">Bienestar universitario</a>
+        <ul class="menu__links">
+          <li><a href="https://www.unilibre.edu.co/biblioteca">Biblioteca</a></li>
+          <li><a href="https://www.unilibre.edu.co/internacionalizacion/">Internacionalización</a></li>
+          <li><a href="https://www.unilibre.edu.co/consultorios-y-unidades-de-proyeccion-social/">Consultorios y proyección social</a></li>
+          <li><a href="https://www.unilibre.edu.co/emisora-centenario/">Emisora Centenario</a></li>
+          <li><a href="https://www.unilibre.edu.co/campus-virtual/">Campus virtual</a></li>
+          <li><a href="https://www.unilibre.edu.co/eventos/">Eventos</a></li>
+        </ul>
+      </section>
+
+      <section class="menu__panel" id="m-investigacion" hidden>
+        <button type="button" class="menu__back text-btn">Volver</button>
+        <h2>Investigación</h2>
+        <p>Grupos, proyectos, revistas y libros de la comunidad Unilibrista, reunidos en el Sistema Centenario.</p>
+        <a class="menu__more" href="https://www.unilibre.edu.co/investigacion">Ir a Investigación</a>
+        <ul class="menu__links">
+          <li><a href="https://inv-centenario.unilibre.edu.co/PGrupos/">Grupos de investigación</a></li>
+          <li><a href="https://inv-centenario.unilibre.edu.co/PProyectos/">Proyectos</a></li>
+          <li><a href="https://inv-centenario.unilibre.edu.co/PInvestigador/">Investigadores</a></li>
+          <li><a href="https://www.unilibre.edu.co/investigacion/convocatorias-dna/">Convocatorias</a></li>
+          <li><a href="https://revistas.unilibre.edu.co/">Revistas</a></li>
+          <li><a href="https://libros.unilibre.edu.co/index.php/unilibre">Libros</a></li>
+          <li><a href="https://www.unilibre.edu.co/observatorios/">Observatorios</a></li>
+        </ul>
+      </section>
+
+      <section class="menu__panel" id="m-universidad" hidden>
+        <button type="button" class="menu__back text-btn">Volver</button>
+        <h2>La Universidad</h2>
+        <p>Fundada en 1923 por el general Benjamín Herrera como una institución laica, abierta a todas las doctrinas.</p>
+        <a class="menu__more" href="https://www.unilibre.edu.co/sobre-la-universidad-libre/">Nuestra historia</a>
+        <ul class="menu__links">
+          <li><a href="https://www.unilibre.edu.co/la-universidad/proyeccion-social">Proyección social</a></li>
+          <li><a href="https://www.unilibre.edu.co/normativas/">Normativa</a></li>
+          <li><a href="https://www.unilibre.edu.co/aseguramiento-de-la-calidad-academica/">Aseguramiento de la calidad académica</a></li>
+          <li><a href="https://www.unilibre.edu.co/la-universidad/sistema-de-gestion-de-calidad">Sistema de gestión de calidad</a></li>
+          <li><a href="https://www.unilibre.edu.co/escuela-de-formacion-para-docentes/">Escuela de Formación para Docentes</a></li>
+          <li><a href="https://www.unilibre.edu.co/directorio-institucional/">Directorio institucional</a></li>
+        </ul>
+      </section>
+
+      <section class="menu__panel" id="m-noticias" hidden>
+        <button type="button" class="menu__back text-btn">Volver</button>
+        <h2>Noticias</h2>
+        <p>Comunicaciones, información y prensa de las siete seccionales.</p>
+        <a class="menu__more" href="https://www.unilibre.edu.co/noticias">Todas las noticias</a>
+        <ul class="menu__stories">
+          <li>
+            <a href="https://www.unilibre.edu.co/noticias/nuestra-formacion-que-trasciende-el-aula/">Nuestra formación trasciende el aula</a>
+            <p>Los egresados de la seccional Bogotá registran 79 % de inserción laboral en cinco años.</p>
+          </li>
+          <li>
+            <a href="https://www.unilibre.edu.co/noticias/convocatoria-de-ponencias-para-la-conferencia-internacional-albus-2026/">Conferencia Internacional ALBUS 2026</a>
+            <p>La Libre será sede del encuentro del 3 al 5 de noviembre.</p>
+          </li>
+          <li>
+            <a href="https://www.unilibre.edu.co/noticias/uli-la-nueva-mascota-que-acompanara-a-la-comunidad-unilibrista/">Conoce a Uli</a>
+            <p>La nueva mascota que acompañará a la comunidad Unilibrista.</p>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </div>
+
+  <div class="menu__quick wrap">
+    <h2 class="visually-hidden">Accesos rápidos</h2>
+    <ul>
+      <li><a href="https://siul.unilibre.edu.co/sinugwt/">SIUL</a></li>
+      <li><a href="https://www.unilibre.edu.co/pasarelas-de-pago-pse/">Pagos PSE</a></li>
+      <li><a href="https://www.unilibre.edu.co/directorio-institucional/">Directorio</a></li>
+      <li><a href="https://www.unilibre.edu.co/eventos/">Eventos</a></li>
+      <li><a href="https://www.unilibre.edu.co/egresados/">Egresados</a></li>
+      <li><a href="https://www.kawak.com.co/unilibre/pqrs/pqrs_index.php">PQRSF</a></li>
+      <li><a href="https://www.unilibre.edu.co/transparencia-y-acceso-a-la-informacion-publica/">Transparencia</a></li>
+    </ul>
+  </div>
+</dialog>
+
+<!-- ================= BÚSQUEDA ================= -->
+<dialog class="search" id="search" aria-labelledby="search-label">
+  <div class="wrap search__inner">
+    <form role="search" action="https://www.unilibre.edu.co/" method="get">
+      <label id="search-label" for="search-input" class="search__label">Buscar en la Universidad Libre</label>
+      <div class="search__row">
+        <input id="search-input" name="s" type="search" autocomplete="off" placeholder="Programa, trámite o dependencia" aria-describedby="search-hint">
+        <button type="submit" class="btn btn--red">Buscar</button>
+      </div>
+      <p class="search__hint" id="search-hint">Escribe para ver accesos directos. Esc para cerrar.</p>
+      <ul class="search__results" id="search-results" aria-live="polite"></ul>
+    </form>
+    <button class="header__btn search__close" type="button" id="search-close">
+      <span>Cerrar</span>
+      <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><path d="M5 5l14 14M19 5L5 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</dialog>
+
+<main id="contenido" tabindex="-1">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" aria-labelledby="hero-title">
+    <figure class="hero__media media media--dark">
+      <img src="https://images.unsplash.com/photo-1637157195867-a1cc08be40ed?auto=format&fit=crop&w=2400&q=70"
+           srcset="https://images.unsplash.com/photo-1637157195867-a1cc08be40ed?auto=format&fit=crop&w=800&q=70 800w,
+                   https://images.unsplash.com/photo-1637157195867-a1cc08be40ed?auto=format&fit=crop&w=1400&q=70 1400w,
+                   https://images.unsplash.com/photo-1637157195867-a1cc08be40ed?auto=format&fit=crop&w=2400&q=70 2400w"
+           sizes="100vw" alt="Plaza de Bolívar, en La Candelaria, a pocas cuadras del campus fundacional de la Universidad Libre en Bogotá"
+           width="2400" height="1600" fetchpriority="high" decoding="async">
+      <figcaption class="credit">Plaza de Bolívar, Bogotá. Foto: Carolina Gomes / Unsplash</figcaption>
+    </figure>
+    <div class="hero__content wrap">
+      <h1 id="hero-title" class="hero__title">Universidad Libre</h1>
+      <div class="hero__focus">
+        <p class="hero__kicker">En foco</p>
+        <h2 class="hero__subtitle">La Libre en las regiones</h2>
+        <p class="hero__deck">Desde 1923, una universidad laica y abierta a todas las ideas que creció de Bogotá a seis ciudades más.</p>
+        <a class="link-arrow link-arrow--light" href="#seccionales">Recorre las siete seccionales</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= COMUNIDAD NACIONAL (mosaico + cifras) ================= -->
+  <section class="community" aria-labelledby="community-title">
+    <div class="wrap">
+      <h2 id="community-title" class="h-section">Nuestra comunidad en Colombia</h2>
+      <div class="mosaic">
+        <figure class="mosaic__item media">
+          <img src="https://images.unsplash.com/photo-1719241372652-19cafd61c2b9?auto=format&fit=crop&w=1200&q=70"
+               alt="Fachada del edificio del antiguo Banco Dugand, con su reloj, en el centro de Barranquilla"
+               width="1200" height="800" loading="lazy" decoding="async">
+          <figcaption><span class="mosaic__city">Barranquilla</span><span class="credit">Foto: Diego Castañeda / Unsplash</span></figcaption>
+        </figure>
+        <figure class="mosaic__item media">
+          <img src="https://images.unsplash.com/photo-1587490632463-9bfc8e796255?auto=format&fit=crop&w=900&q=70"
+               alt="Edificio del Diario del Otún visto desde la calle en Pereira"
+               width="900" height="1200" loading="lazy" decoding="async">
+          <figcaption><span class="mosaic__city">Pereira</span><span class="credit">Foto: Felipe / Unsplash</span></figcaption>
+        </figure>
+        <figure class="mosaic__item media">
+          <img src="https://images.unsplash.com/photo-1534943441045-1009d7cb0bb9?auto=format&fit=crop&w=900&q=70"
+               alt="Calle colonial con una torre amarilla en Cartagena"
+               width="900" height="1200" loading="lazy" decoding="async">
+          <figcaption><span class="mosaic__city">Cartagena</span><span class="credit">Foto: Ricardo Gómez Ángel / Unsplash</span></figcaption>
+        </figure>
+      </div>
+      <ul class="stats">
+        <li>
+          <p class="stats__num">7</p>
+          <p class="stats__text">seccionales: Bogotá y seis ciudades más, del Caribe al Pacífico. <a href="#seccionales">Conócelas</a></p>
+        </li>
+        <li>
+          <p class="stats__num">79&nbsp;%</p>
+          <p class="stats__text">de inserción laboral de los egresados de la seccional Bogotá en los últimos cinco años. <a href="https://www.unilibre.edu.co/noticias/nuestra-formacion-que-trasciende-el-aula/">Ver la nota</a></p>
+        </li>
+        <li>
+          <p class="stats__num">98.060</p>
+          <p class="stats__text">intervenciones de Bienestar Universitario desde 2021 en la seccional Bogotá. <a href="https://www.unilibre.edu.co/noticias/tu-bienestar-tambien-es-parte-de-nuestra-excelencia/">Ver la nota</a></p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Navegación entre seccionales -->
+  <nav class="region-nav" id="seccionales" aria-label="Seccionales">
+    <div class="wrap">
+      <ul>
+        <li><a href="#bogota">Bogotá</a></li>
+        <li><a href="#barranquilla">Barranquilla</a></li>
+        <li><a href="#pereira">Pereira</a></li>
+        <li><a href="#cucuta">Cúcuta</a></li>
+        <li><a href="#cali">Cali</a></li>
+        <li><a href="#socorro">El Socorro</a></li>
+        <li><a href="#cartagena">Cartagena</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ================= BOGOTÁ ================= -->
+  <section class="region" id="bogota" aria-labelledby="t-bogota">
+    <div class="wrap">
+      <header class="region__head">
+        <p class="region__year">1923</p>
+        <h2 id="t-bogota" class="h-region">Bogotá</h2>
+        <p class="region__intro">El 13 de febrero de 1923 la Universidad abrió sus puertas con las facultades de <a href="https://www.unilibre.edu.co/bogota/facultad-de-derecho-ciencias-politicas-y-sociales/">Derecho y Ciencias Políticas</a>, <a href="https://www.unilibre.edu.co/bogota/facultad-de-ingenieria/">Ingeniería</a> y Literatura y Filosofía. Hoy la sede fundacional funciona en los campus La Candelaria y El Bosque Popular.</p>
+      </header>
+      <div class="cards">
+        <article class="card card--feature">
+          <div class="card__media media"><img src="https://www.unilibre.edu.co/bogota/wp-content/uploads/2026/10/Humedales-thumb.webp" alt="" loading="lazy" decoding="async" width="900" height="600"></div>
+          <h3 class="card__title"><a href="https://www.unilibre.edu.co/noticias/hablemos-del-futuro-de-nuestros-humedales">¡Hablemos del futuro de nuestros humedales!</a></h3>
+          <p>Conversatorio sobre gobernanza ambiental con la Secretaría de Ambiente de Bogotá.</p>
+        </article>
+        <article class="card">
+          <div class="card__media media"><img src="https://www.unilibre.edu.co/bogota/wp-content/uploads/2026/05/Semana-de-la-Salud5.webp" alt="" loading="lazy" decoding="async" width="600" height="450"></div>
+          <h3 class="card__title"><a href="https://www.unilibre.edu.co/noticias/tu-bienestar-tambien-es-parte-de-nuestra-excelencia">Tu bienestar también es parte de nuestra excelencia</a></h3>
+          <p>Más de 98.060 intervenciones de Bienestar desde 2021.</p>
+        </article>
+        <article class="card">
+          <div class="card__media media"><img src="https://www.unilibre.edu.co/bogota/wp-content/uploads/2026/09/Jornadas-de-Derecho-Procesal-Thumb.webp" alt="" loading="lazy" decoding="async" width="600" height="450"></div>
+          <h3 class="card__title"><a href="https://www.unilibre.edu.co/noticias/congreso-internacional-de-derecho-economico-derecho-privado-y-jornadas-de-derecho-procesal">XXVII Jornada de Derecho Procesal Adolfo Mina Balanta</a></h3>
+          <p>Junto al IX Congreso de Derecho Privado y el I Encuentro de Análisis Económico.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <aside class="quote" aria-label="Cita histórica">
+    <div class="wrap">
+      <blockquote>
+        <p>Facilitar la instrucción y adaptar los estudios a las necesidades del país y del mundo.</p>
+      </blockquote>
+      <p class="quote__cite">Objeto de la sociedad que dio origen a la Universidad Libre, 1912</p>
+    </div>
+  </aside>
+
+  <!-- ================= BARRANQUILLA ================= -->
+  <section class="region" id="barranquilla" aria-labelledby="t-barranquilla">
+    <div class="wrap">
+      <header class="region__head">
+        <p class="region__year">1956</p>
+        <h2 id="t-barranquilla" class="h-region">Barranquilla</h2>
+        <p class="region__intro">La primera seccional fuera de Bogotá nació por impulso de sus egresados y comenzó con el programa de Derecho. Hoy reúne cuatro facultades, entre ellas <a href="https://www.unilibre.edu.co/barranquilla/facultad-de-ciencias-de-la-salud/">Ciencias de la Salud</a>.</p>
+      </header>
+      <div class="cards cards--two">
+        <article class="card card--feature">
+          <div class="card__media media"><img src="https://www.unilibre.edu.co/barranquilla/wp-content/uploads/2026/10/WhatsApp-Image-2026-10-08-at-10.39.05-AM-2.jpeg" alt="" loading="lazy" decoding="async" width="900" height="600"></div>
+          <h3 class="card__title"><a href="https://www.unilibre.edu.co/noticias/facultad-de-ciencias-de-la-salud-exactas-y-naturales-de-la-universidad-libre-seccional-barranquilla-fortalecio-la-formacion-docente-durante-el-claustro-docente-2026">Claustro Docente 2026 de Ciencias de la Salud</a></h3>
+          <p>La facultad fortaleció la formación de sus profesores durante el encuentro anual.</p>
+        </article>
+        <article class="card card--feature">
+          <div class="card__media media"><img src="https://www.unilibre.edu.co/barranquilla/wp-content/uploads/2026/08/1Nicolas-Samper.webp" alt="" loading="lazy" decoding="async" width="900" height="600"></div>
+          <h3 class="card__title"><a href="https://www.unilibre.edu.co/noticias/catedra-gerardo-molina-inicia-su-programacion-2026-2-con-una-reflexion-sobre-futbol-y-ciudadania">Fútbol y ciudadanía en la Cátedra Gerardo Molina</a></h3>
+          <p>La programación 2026-2 de la cátedra arrancó con esta reflexión.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="banner" aria-labelledby="b-social">
+    <div class="wrap banner__inner">
+      <div class="banner__text">
+        <a class="banner__eyebrow" href="https://www.unilibre.edu.co/la-universidad/proyeccion-social">Proyección social</a>
+        <h2 id="b-social" class="banner__title"><a href="https://www.unilibre.edu.co/noticias/universidad-libre-fortalece-capacidades-regionales-para-la-formulacion-y-gestion-de-proyectos-de-cooperacion-e-impacto-social">Proyectos de cooperación con impacto en las regiones</a></h2>
+        <p>La Universidad fortalece capacidades regionales para formular y gestionar proyectos de cooperación e impacto social.</p>
+      </div>
+      <div class="banner__media media media--dark"><img src="https://www.unilibre.edu.co/cali/wp-content/uploads/2026/10/proyeccionsocial-scaled.jpg" alt="" loading="lazy" decoding="async" width="1200" height="800"></div>
+    </div>
+  </section>
+
+  <!-- ================= PEREIRA ================= -->
+  <section class="region" id="pereira" aria-labelledby="t-pereira">
+    <div class="wrap">
+      <header class="region__head">
+        <p class="region__year">1971</p>
+        <h2 id="t-pereira" class="h-region">Pereira</h2>
+        <p class="region__intro">La Libre llegó al Eje Cafetero como aliada del desarrollo regional. Es una de las tres seccionales donde se ofrece el nuevo <a href="https://www.unilibre.edu.co/posgrados/doctorado-en-ingenieria-de-la-sostenibilidad-registro-unico/">Doctorado en Ingeniería de la Sostenibilidad</a>.</p>
+      </header>
+      <div class="cards">
+        <article class="card card--feature">
+          <div class="card__media media"><img src="https://www.unilibre.edu.co/pereira/wp-content/uploads/2026/10/biblioteca-crai-nuevos-espacios-colaborativos.jpg" alt="" loading="lazy" decoding="async" width="900" height="600"></div>
+          <h3 class="card__title"><a href="https://www.unilibre.edu.co/noticias/crai-biblioteca-estrena-espacios-para-aprender-crear-e-innovar-en-equipo">La biblioteca CRAI estrena espacios colaborativos</a></h3>
+          <p>Nuevos lugares para aprender, crear e innovar en equipo.</p>
+        </article>
+        <article class="card">
+          <div class="card__media media"><img src="https://www.unilibre.edu.co/pereira/wp-content/uploads/2026/10/Punto-purpura-1.png" alt="" loading="lazy" decoding="async" width="600" height="450"></div>
+          <h3 class="card__title"><a href="https://www.unilibre.edu.co/noticias/universidad-libre-seccional-pereira-inaugura-su-punto-purpura-para-prevenir-las-violencias-basadas-en-genero">Pereira inaugura su Punto Púrpura</a></h3>
+          <p>Un espacio para prevenir las violencias basadas en género.</p>
+        </article>
+        <article class="card">
+          <h3 class="card__title"><a href="https://www.unilibre.edu.co/posgrados/doctorado-en-ingenieria-de-la-sostenibilidad-registro-unico/">Doctorado en Ingeniería de la Sostenibilidad</a></h3>
+          <p>Inscripciones abiertas para 2027-1 en Pereira, Bogotá y Barranquilla.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CÚCUTA ================= -->
+  <section class="region" id="cucuta" aria-labelledby="t-cucuta">
+    <div class="wrap">
+      <header class="region__head">
+        <p class="region__year">1973</p>
+        <h2 id="t-cucuta" class="h-region">Cúcuta</h2>
+        <p class="region__intro">La seccional abrió con el programa de Derecho, el primero de la región. Hoy ofrece programas en <a href="https://www.unilibre.edu.co/cucuta/facultad-de-ingenieria/">Ingeniería</a> y <a href="https://www.unilibre.edu.co/cucuta/facultad-de-ciencias-economicas-administrativas-y-contables/">Ciencias Económicas, Administrativas y Contables</a>.</p>
+      </header>
+      <div class="cards cards--two">
+        <article class="card card--feature">
+          <div class="card__media media"><img src="https://www.unilibre.edu.co/cucuta/wp-content/uploads/2026/09/WhatsApp-Image-2026-09-29-at-6.20.16-PM.webp" alt="" loading="lazy" decoding="async" width="900" height="600"></div>
+          <h3 class="card__title"><a href="https://www.unilibre.edu.co/noticias/estudiantes-de-bogota-y-cucuta-entre-los-semifinalistas-del-xlvii-congreso-colombiano-de-procesal">Semifinalistas del XLVII Congreso Colombiano de Procesal</a></h3>
+          <p>Estudiantes de Cúcuta y Bogotá llegaron a la semifinal del concurso.</p>
+        </article>
+        <article class="card card--feature">
+          <div class="card__media media"><img src="https://www.unilibre.edu.co/cucuta/wp-content/uploads/2026/04/P62_CONGRESO_Mesa-de-trabajo-1-copia-7.jpg-1.webp" alt="" loading="lazy" decoding="async" width="900" height="600"></div>
+          <h3 class="card__title"><a href="https://www.unilibre.edu.co/noticias/la-unilibre-cucuta-sera-sede-de-el-encuentro-internacional-sobre-seguridad-social-y-trabajo">Encuentro internacional sobre seguridad social y trabajo</a></h3>
+          <p>La seccional Cúcuta es la sede del encuentro.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="banner banner--reverse" aria-labelledby="b-inv">
+    <div class="wrap banner__inner">
+      <div class="banner__text">
+        <a class="banner__eyebrow" href="https://www.unilibre.edu.co/investigacion">Investigación</a>
+        <h2 id="b-inv" class="banner__title"><a href="https://www.unilibre.edu.co/noticias/la-investigacion-juridica-se-encuentra-en-el-dialogo-interdisciplinario">La investigación jurídica en diálogo con otras disciplinas</a></h2>
+        <p>Coloquio de la Maestría en Derecho. Grupos, proyectos y revistas están en el <a href="https://inv-centenario.unilibre.edu.co/">Sistema Centenario</a>.</p>
+      </div>
+      <div class="banner__media media media--dark"><img src="https://www.unilibre.edu.co/bogota/wp-content/uploads/2026/10/COLOQUIO-MAESTRIA-EN-DERECHO-OCTUBRE-14-DE-2026-thumb.webp" alt="" loading="lazy" decoding="async" width="1200" height="800"></div>
+    </div>
+  </section>
+
+  <!-- ================= CALI ================= -->
+  <section class="region" id="cali" aria-labelledby="t-cali">
+    <div class="wrap">
+      <header class="region__head">
+        <p class="region__year">1973</p>
+        <h2 id="t-cali" class="h-region">Cali</h2>
+        <p class="region__intro">En el Pacífico, la Universidad empezó con Derecho y luego sumó Administración y Contaduría. Hoy cuenta también con <a href="https://www.unilibre.edu.co/cali/facultad-de-ciencias-de-la-salud/">Ciencias de la Salud</a> e <a href="https://www.unilibre.edu.co/cali/facultad-de-ingenieria/">Ingeniería</a>.</p>
+      </header>
+      <div class="cards">
+        <article class="card card--feature">
+          <div class="card__media media"><img src="https://www.unilibre.edu.co/cali/wp-content/uploads/2026/10/urgencias-decenbrinas.jpg" alt="" loading="lazy" decoding="async" width="900" height="600"></div>
+          <h3 class="card__title"><a href="https://www.unilibre.edu.co/noticias/congreso-de-urgencias-decembrinas-xxxi-universidad-libre-seccional-cali">XXXI Congreso de Urgencias Decembrinas</a></h3>
+          <p>Evento académico de la seccional Cali.</p>
+        </article>
+        <article class="card">
+          <div class="card__media media"><img src="https://www.unilibre.edu.co/cali/wp-content/uploads/2026/10/agendasemana-de-la-democracia.jpg" alt="" loading="lazy" decoding="async" width="600" height="450"></div>
+          <h3 class="card__title"><a href="https://www.unilibre.edu.co/noticias/semana-de-la-democracia">Semana de la Democracia</a></h3>
+          <p>Mujeres, democracia y poder.</p>
+        </article>
+        <article class="card">
+          <h3 class="card__title"><a href="https://www.unilibre.edu.co/noticias/aviso-importante-alerta-de-fraude">Aviso para egresados</a></h3>
+          <p>La dirección apoyo.egresados.cali@unilibre.edu.co es falsa; no respondas mensajes desde ella.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= EL SOCORRO ================= -->
+  <section class="region" id="socorro" aria-labelledby="t-socorro">
+    <div class="wrap">
+      <header class="region__head">
+        <p class="region__year">1974</p>
+        <h2 id="t-socorro" class="h-region">El Socorro</h2>
+        <p class="region__intro">En la tierra de la revolución comunera, la Libre empezó formando maestros en Física y Matemáticas, Filología e Idiomas, y Ciencias Sociales. Es una de las dos seccionales con <a href="https://www.unilibre.edu.co/socorro/facultad-de-ciencias-de-la-educacion/">Ciencias de la Educación</a>.</p>
+      </header>
+      <div class="cards cards--two">
+        <article class="card card--feature">
+          <div class="card__media media"><img src="https://www.unilibre.edu.co/socorro/wp-content/uploads/2026/09/powerlifting-estudiante-socorro.webp" alt="" loading="lazy" decoding="async" width="900" height="600"></div>
+          <h3 class="card__title"><a href="https://www.unilibre.edu.co/noticias/estudiante-de-derecho-de-la-seccional-socorro-subcampeon-sudamericano-de-powerlifting">Subcampeón sudamericano de powerlifting</a></h3>
+          <p>Un estudiante de Derecho de la seccional logró el subcampeonato sudamericano.</p>
+        </article>
+        <article class="card card--feature">
+          <div class="card__media media"><img src="https://www.unilibre.edu.co/socorro/wp-content/uploads/2026/09/WhatsApp-Image-2026-09-04-at-11.57.36-AM.jpeg" alt="" loading="lazy" decoding="async" width="900" height="600"></div>
+          <h3 class="card__title"><a href="https://www.unilibre.edu.co/noticias/ii-jornada-de-actualizacion-juridica">II Jornada de Actualización Jurídica</a></h3>
+          <p>Jornada académica de actualización en derecho de la seccional El Socorro.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="banner" aria-labelledby="b-int">
+    <div class="wrap banner__inner">
+      <div class="banner__text">
+        <a class="banner__eyebrow" href="https://www.unilibre.edu.co/internacionalizacion/">Internacionalización</a>
+        <h2 id="b-int" class="banner__title"><a href="https://www.unilibre.edu.co/noticias/universidad-libre-reconoce-a-12-estudiantes-beneficiarios-de-las-becas-path-ellucian">12 estudiantes con becas PATH–ELLUCIAN</a></h2>
+        <p>La Universidad reconoció a los beneficiarios de estas becas. Para 2027 viene además el <a href="https://www.unilibre.edu.co/noticias/campamento-de-verano-2027-una-experiencia-internacional-para-fortalecer-el-ingles-y-vivir-la-cultura-canadiense/">Campamento de Verano en Canadá</a> con Niagara College.</p>
+      </div>
+      <div class="banner__media media media--dark"><img src="https://www.unilibre.edu.co/pereira/wp-content/uploads/2026/10/Becas-Ellucian-ORI.webp" alt="" loading="lazy" decoding="async" width="1200" height="800"></div>
+    </div>
+  </section>
+
+  <!-- ================= CARTAGENA ================= -->
+  <section class="region" id="cartagena" aria-labelledby="t-cartagena">
+    <div class="wrap">
+      <header class="region__head">
+        <p class="region__year">1996</p>
+        <h2 id="t-cartagena" class="h-region">Cartagena</h2>
+        <p class="region__intro">En el Corralito de Piedra funcionaba desde hacía años el Colegio de Bachillerato Universidad Libre. En 1996 se convirtió en sede, con programas ofrecidos por extensión desde otras seccionales.</p>
+      </header>
+      <div class="cards">
+        <article class="card card--feature">
+          <div class="card__media media"><img src="https://www.unilibre.edu.co/cartagena/wp-content/uploads/2026/10/concurso_canto_ctg-thumb.jpeg" alt="" loading="lazy" decoding="async" width="900" height="600"></div>
+          <h3 class="card__title"><a href="https://www.unilibre.edu.co/noticias/concurso-de-canto">Concurso de Canto</a></h3>
+          <p>Convocatoria de la seccional Cartagena para mostrar el talento musical.</p>
+        </article>
+        <article class="card">
+          <div class="card__media media"><img src="https://www.unilibre.edu.co/cartagena/wp-content/uploads/2026/10/futbol_4_ctg-thumb.jpeg" alt="" loading="lazy" decoding="async" width="600" height="450"></div>
+          <h3 class="card__title"><a href="https://www.unilibre.edu.co/noticias/torneo-relampago-de-futbol-4">Torneo Relámpago de Fútbol 4</a></h3>
+          <p>Deporte y encuentro entre estudiantes.</p>
+        </article>
+        <article class="card">
+          <div class="card__media media"><img src="https://www.unilibre.edu.co/cartagena/wp-content/uploads/2026/07/OK-Conferencia-Globalizacion-thumb.webp" alt="" loading="lazy" decoding="async" width="600" height="450"></div>
+          <h3 class="card__title"><a href="https://www.unilibre.edu.co/noticias/conferencia-sobre-globalizacion-y-competitividad-para-egresados-unilibristas">Globalización y competitividad</a></h3>
+          <p>Conferencia para egresados unilibristas.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="enroll" aria-labelledby="enroll-title">
+    <div class="wrap enroll__inner">
+      <div>
+        <h2 id="enroll-title" class="h-section h-section--light">Inscripciones abiertas para 2027-1</h2>
+        <p>Matricúlate antes del 31 de diciembre y conserva el valor de 2026. La inscripción a pregrado no tiene costo.</p>
+      </div>
+      <div class="enroll__actions">
+        <a class="btn btn--white" href="https://www.unilibre.edu.co/pregrados/">Inscribirme a pregrado</a>
+        <a class="btn btn--outline-light" href="https://www.unilibre.edu.co/posgrados/">Ver posgrados</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="related" aria-labelledby="related-title">
+    <div class="wrap related__inner">
+      <h2 id="related-title" class="related__label">También te puede interesar</h2>
+      <ul>
+        <li><a href="https://www.unilibre.edu.co/educacion-continua/catedra-gerardo-molina-2026-2/">Cátedra Gerardo Molina 2026-2</a></li>
+        <li><a href="https://www.unilibre.edu.co/noticias/convocatoria-de-ponencias-para-la-conferencia-internacional-albus-2026/">Conferencia ALBUS 2026</a></li>
+        <li><a href="https://www.unilibre.edu.co/noticias/el-cleul-es-nuevo-centro-certificador-internacional-toefl-itp/">El CLEUL certifica TOEFL ITP</a></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+
+<!-- ================= PIE DE PÁGINA ================= -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <a class="wordmark wordmark--inverse" href="https://www.unilibre.edu.co" aria-label="Universidad Libre, inicio">
+        <span class="wordmark__seal" aria-hidden="true"></span>
+        <span class="wordmark__name">Universidad Libre</span>
+      </a>
+      <ul class="social" aria-label="Redes sociales">
+        <li><a href="https://www.instagram.com/ulibrebogota/">Instagram</a></li>
+        <li><a href="https://www.tiktok.com/@unilibre">TikTok</a></li>
+        <li><a href="https://www.linkedin.com/school/universidad-libre-bogot%C3%A1/">LinkedIn</a></li>
+        <li><a href="https://www.facebook.com/unilibrebogota">Facebook</a></li>
+        <li><a href="https://www.youtube.com/channel/UCAyqHTJk926GvU8C_I8cpgQ">YouTube</a></li>
+        <li><a href="https://x.com/Unilibrebog">X</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__cols">
+      <div>
+        <h2 class="footer__h">Contacto</h2>
+        <ul>
+          <li>Línea gratuita nacional: <a href="tel:018000180560">01 8000 180560</a></li>
+          <li>PBX: <a href="tel:+576013821000">(601) 382 1000</a></li>
+          <li><a href="https://chat.invmaver.com/chat/">Chatear con un asesor</a></li>
+          <li><a href="https://www.unilibre.edu.co/directorio-institucional/">Directorio institucional</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="footer__h">Seccionales</h2>
+        <ul class="footer__two">
+          <li><a href="https://www.unilibre.edu.co/bogota">Bogotá</a></li>
+          <li><a href="https://www.unilibre.edu.co/barranquilla">Barranquilla</a></li>
+          <li><a href="https://www.unilibre.edu.co/cali">Cali</a></li>
+          <li><a href="https://www.unilibre.edu.co/pereira">Pereira</a></li>
+          <li><a href="https://www.unilibre.edu.co/cucuta">Cúcuta</a></li>
+          <li><a href="https://www.unilibre.edu.co/cartagena">Cartagena</a></li>
+          <li><a href="https://www.unilibre.edu.co/socorro">El Socorro</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="footer__h">Transparencia</h2>
+        <ul>
+          <li><a href="https://www.unilibre.edu.co/transparencia-y-acceso-a-la-informacion-publica/">Transparencia y acceso a la información</a></li>
+          <li><a href="https://www.unilibre.edu.co/atencion-y-servicios-a-la-ciudadania/">Atención a la ciudadanía</a></li>
+          <li><a href="https://www.kawak.com.co/unilibre/pqrs/pqrs_index.php">PQRSD</a></li>
+          <li><a href="https://www.unilibre.edu.co/notificaciones-judiciales/">Notificaciones judiciales</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="footer__h">Sitio web</h2>
+        <ul>
+          <li><a href="https://www.unilibre.edu.co/protecciondedatos/">Protección de datos personales</a></li>
+          <li><a href="https://www.unilibre.edu.co/servicios-tic/seguridad-de-la-informacion-y-ciberseguridad/">Seguridad de la información</a></li>
+          <li><a href="https://www.unilibre.edu.co/derechos-pecuniarios/">Derechos pecuniarios</a></li>
+          <li><a href="https://www.unilibre.edu.co/wp-content/uploads/2024/10/Resolucion-ratificacion-estatutaria-MEN.pdf">Estatutos (PDF)</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__legal">
+      <p>Campus La Candelaria: Calle 8 n.º 5-80 · Campus El Bosque Popular: Carrera 70 n.º 53-40, Bogotá</p>
+      <p>© 2026 Universidad Libre. Vigilada Mineducación.</p>
+    </div>
+  </div>
+</footer>
+
+<a href="#top" class="to-top" id="to-top" aria-label="Volver arriba" hidden>
+  <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><path d="M12 19V5M5 12l7-7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</a>
+
+<script src="script.js" defer></script>
+</body>
+</html>
